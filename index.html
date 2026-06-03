@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEC Junk Removal – Fast & Affordable | Connecticut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --coal: #111213;
+    --charcoal: #1c1e20;
+    --steel: #2a2d31;
+    --mid: #4a4f56;
+    --muted: #7a8089;
+    --border: rgba(255,255,255,0.07);
+    --gold: #c8a96e;
+    --gold-light: #e0c48a;
+    --gold-dim: rgba(200,169,110,0.15);
+    --white: #f5f3ef;
+    --white-dim: rgba(245,243,239,0.55);
+    --radius: 4px;
+    --transition: 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+  }
+
+  .nav-logo::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--white-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    font-weight: 500 !important;
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    transition: background var(--transition) !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 180px 64px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 7vw, 108px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--white-dim);
+    max-width: 420px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 16px 36px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(200,169,110,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 32px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-pills {
+    display: flex;
+    gap: 24px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .pill {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .pill-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .pill-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Hero right — visual */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, var(--black) 0%, transparent 35%),
+      linear-gradient(135deg, #1a1810 0%, #0d0c09 100%);
+    z-index: 1;
+  }
+
+  .hero-geo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-geo::before {
+    content: 'TEC';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 380px;
+    line-height: 1;
+    color: rgba(200,169,110,0.04);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .hero-truck {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    z-index: 2;
+    opacity: 0.25;
+    font-size: 240px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 20px;
+    line-height: 1;
+    filter: grayscale(1);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 140px;
+    height: 140px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    animation: spin-badge 20s linear infinite;
+  }
+
+  .hero-badge-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    color: var(--black);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badge-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--black);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    z-index: 2;
+    animation: bounce-down 2s ease-in-out infinite;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  @keyframes bounce-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ─── TICKER ─── */
+  .ticker {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+  }
+
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    color: var(--black);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+  }
+
+  .ticker-item::after {
+    content: '◆';
+    font-size: 8px;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 120px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: 100%;
+    padding: 120px 48px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4vw, 58px);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-intro {
+    font-size: 17px;
+    color: var(--white-dim);
+    max-width: 520px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    border-top: 1px solid var(--border);
+  }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .service-card {
+    background: var(--coal);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: background var(--transition);
+    group: true;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  .service-card:hover { background: var(--charcoal); }
+  .service-card:hover::before { width: 100%; }
+
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 24px;
+    display: block;
+    transition: transform var(--transition);
+  }
+
+  .service-card:hover .service-icon { transform: scale(1.1); }
+
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: rgba(200,169,110,0.06);
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    transition: color var(--transition);
+  }
+
+  .service-card:hover .service-num { color: rgba(200,169,110,0.1); }
+
+  .service-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--coal);
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .about-bg-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 300px;
+    color: rgba(200,169,110,0.03);
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .feature-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+  }
+
+  .feature-row:hover { padding-left: 8px; }
+
+  .feature-check {
+    width: 28px;
+    height: 28px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(200,169,110,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .feature-text {
+    font-size: 15px;
+    color: var(--white-dim);
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .stat-block {
+    background: var(--charcoal);
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .about-quote {
+    background: var(--steel);
+    border-left: 3px solid var(--gold);
+    padding: 32px 36px;
+    margin-top: 2px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--white-dim);
+    line-height: 1.5;
+  }
+
+  /* ─── REVIEWS ─── */
+  #reviews {
+    border-top: 1px solid var(--border);
+    background: var(--black);
+    max-width: 100%;
+  }
+
+  .reviews-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .review-card {
+    background: var(--coal);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transition);
+  }
+
+  .review-card:hover { background: var(--charcoal); }
+
+  .review-stars {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+
+  .review-text {
+    font-size: 16px;
+    color: var(--white-dim);
+    line-height: 1.75;
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 32px;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    background: var(--steel);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--gold);
+    border: 1px solid rgba(200,169,110,0.2);
+    flex-shrink: 0;
+  }
+
+  .review-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.03em;
+  }
+
+  .review-location {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ─── QUOTE FORM ─── */
+  #quote {
+    background: var(--charcoal);
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .quote-left { }
+
+  .quote-contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .contact-info { }
+  .contact-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .contact-value {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .contact-value:hover { color: var(--gold); }
+
+  /* Form */
+  .quote-form {
+    background: var(--coal);
+    padding: 56px 52px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .quote-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 14px 18px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color var(--transition);
+    -webkit-appearance: none;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(200,169,110,0.04);
+  }
+
+  .form-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8089' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+  }
+
+  .form-group select option { background: var(--charcoal); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 13px;
+    padding: 18px;
+    justify-content: center;
+    letter-spacing: 0.15em;
+  }
+
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .form-success-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .form-success-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .form-success-text { color: var(--white-dim); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--coal);
+    border-top: 1px solid var(--border);
+    padding: 56px 48px;
+  }
+
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-logo::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* ─── AREA STRIP ─── */
+  .area-strip {
+    background: var(--steel);
+    padding: 20px 48px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--border);
+  }
+
+  .area-strip strong { color: var(--white-dim); }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in:nth-child(2) { transition-delay: 0.1s; }
+  .fade-in:nth-child(3) { transition-delay: 0.2s; }
+  .fade-in:nth-child(4) { transition-delay: 0.3s; }
+  .fade-in:nth-child(5) { transition-delay: 0.4s; }
+  .fade-in:nth-child(6) { transition-delay: 0.5s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 140px 32px 80px; }
+    .services-header { grid-template-columns: 1fr; gap: 24px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    .quote-inner { grid-template-columns: 1fr; gap: 48px; }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    .section-full { padding: 80px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .quote-form { padding: 36px 24px; }
+    .hero-pills { flex-wrap: wrap; gap: 20px; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    footer .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-links { flex-wrap: wrap; gap: 16px; }
+  }
+  .floating-call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 9998;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .floating-call:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 769px) {
+    .floating-call {
+      display: none;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">TEC<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Local Connecticut Junk Removal</div>
+    <h1>We Haul.<br><em>You Relax.</em></h1>
+    <p class="hero-sub">Furniture, appliances, yard waste, estate cleanouts — same-day service across Connecticut with upfront pricing and zero surprises.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">Get a Free Quote →</a>
+      <a href="tel:8605563012" class="btn-outline">📞 860-556-3012</a>
+    </div>
+    <div class="hero-pills">
+      <div class="pill">
+        <span class="pill-value" style="font-size:22px; letter-spacing:0.03em;">FREE</span>
+        <span class="pill-label">Estimates</span>
+      </div>
+      <div class="pill">
+        <span class="pill-value" style="font-size:22px; letter-spacing:0.03em;">SAME</span>
+        <span class="pill-label">Day Service Available</span>
+      </div>
+      <div class="pill">
+        <span class="pill-value" style="font-size:22px; letter-spacing:0.03em;">LOCAL</span>
+        <span class="pill-label">Locally Owned & Operated</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-geo"></div>
+    <div class="hero-truck">🚛</div>
+    <div class="hero-badge">
+      <div class="hero-badge-inner">
+        <span class="hero-badge-main">FREE</span>
+        <span class="hero-badge-sub">Same-Day<br>Estimates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-item">Furniture Removal</div>
+    <div class="ticker-item">Appliance Hauling</div>
+    <div class="ticker-item">Yard Waste</div>
+    <div class="ticker-item">Estate Cleanouts</div>
+    <div class="ticker-item">Construction Debris</div>
+    <div class="ticker-item">Garage Cleanouts</div>
+    <div class="ticker-item">Same-Day Service</div>
+    <div class="ticker-item">Licensed & Insured</div>
+    <div class="ticker-item">Furniture Removal</div>
+    <div class="ticker-item">Appliance Hauling</div>
+    <div class="ticker-item">Yard Waste</div>
+    <div class="ticker-item">Estate Cleanouts</div>
+    <div class="ticker-item">Construction Debris</div>
+    <div class="ticker-item">Garage Cleanouts</div>
+    <div class="ticker-item">Same-Day Service</div>
+    <div class="ticker-item">Licensed & Insured</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2>Our <em>Services</em></h2>
+    </div>
+    <p class="section-intro">From a single sofa to a full estate cleanout, TEC handles every job with care, speed, and a commitment to eco-friendly disposal.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <span class="service-num">01</span>
+      <span class="service-icon">🛋️</span>
+      <div class="service-title">Furniture Removal</div>
+      <p class="service-desc">Sofas, beds, dressers, tables — we remove all types of furniture from any room in your home or office, fast and careful.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-num">02</span>
+      <span class="service-icon">🧺</span>
+      <div class="service-title">Appliance Hauling</div>
+      <p class="service-desc">Refrigerators, washers, dryers, dishwashers — heavy appliance removal done safely, with eco-friendly disposal options.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-num">03</span>
+      <span class="service-icon">🏚️</span>
+      <div class="service-title">Estate Cleanouts</div>
+      <p class="service-desc">Respectful, thorough cleanout services for estates, foreclosures, and hoarder homes. We handle the heavy lifting so you don't have to.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-num">04</span>
+      <span class="service-icon">🪵</span>
+      <div class="service-title">Construction Debris</div>
+      <p class="service-desc">Drywall, lumber, roofing materials, concrete — we haul post-renovation or post-construction debris from job sites of all sizes.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-num">05</span>
+      <span class="service-icon">🌿</span>
+      <div class="service-title">Yard Waste Removal</div>
+      <p class="service-desc">Branches, brush, leaves, old mulch, and more. Keep your yard clean and tidy — we'll haul away all the organic debris.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-num">06</span>
+      <span class="service-icon">🚗</span>
+      <div class="service-title">Garage & Basement Cleanouts</div>
+      <p class="service-desc">Reclaim your space. We'll clear out years of clutter from garages, basements, attics, and storage units efficiently.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-full" style="padding: 120px 48px;">
+  <div class="about-inner">
+    <div class="about-bg-text">TEC</div>
+    <div>
+      <div class="section-label">Why TEC</div>
+      <h2>We Work <em>Hard</em><br>So You Don't</h2>
+      <p class="section-intro">TEC Junk Removal is a locally owned and operated business serving Connecticut. We're committed to fast, friendly service at honest prices — with no surprise charges at the end of the job.</p>
+      <div class="about-features">
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">Licensed & insured for your complete peace of mind</span>
+        </div>
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">Upfront pricing — know your cost before we start</span>
+        </div>
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">Same-day and next-day availability</span>
+        </div>
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">Eco-friendly disposal — we recycle and donate when possible</span>
+        </div>
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">No job too big or too small</span>
+        </div>
+        <div class="feature-row fade-in">
+          <div class="feature-check">✓</div>
+          <span class="feature-text">Friendly, professional crew every time</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-stats">
+        <div class="stat-block fade-in">
+          <span class="stat-num" style="font-size:36px;">LOCAL</span>
+          <div class="stat-label">Locally Owned & Operated</div>
+        </div>
+        <div class="stat-block fade-in">
+          <span class="stat-num" style="font-size:36px;">FAST</span>
+          <div class="stat-label">Same-Day Service Available</div>
+        </div>
+        <div class="stat-block fade-in">
+          <span class="stat-num" style="font-size:36px;">FREE</span>
+          <div class="stat-label">Free Estimates</div>
+        </div>
+        <div class="stat-block fade-in">
+          <span class="stat-num" style="font-size:36px;">CT</span>
+          <div class="stat-label">Serving Connecticut</div>
+        </div>
+      </div>
+      <div class="about-quote">
+        "No hidden fees, no hassle. Just honest work done right — every single time."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="why-us" class="section-full" style="padding: 120px 48px;">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <div>
+        <div class="section-label">Why Choose TEC</div>
+        <h2>What You Can <em>Count On</em></h2>
+      </div>
+      <p class="section-intro" style="max-width: 340px; font-size: 15px;">We built TEC on straightforward values — honest pricing, reliable service, and respect for your home and your time.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">🏠</div>
+        <div class="service-title" style="margin-bottom:12px;">Locally Owned & Operated</div>
+        <p class="service-desc">TEC is a Connecticut-based business. When you call us, you're supporting a local crew — not a national franchise.</p>
+      </div>
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">💲</div>
+        <div class="service-title" style="margin-bottom:12px;">Upfront, Transparent Pricing</div>
+        <p class="service-desc">You'll know the price before we lift a finger. No hidden fees, no surprise charges at the end of the job.</p>
+      </div>
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">📋</div>
+        <div class="service-title" style="margin-bottom:12px;">Free Estimates</div>
+        <p class="service-desc">Get a no-obligation quote before committing. Call, text, or fill out the form — we'll get back to you fast.</p>
+      </div>
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">⚡</div>
+        <div class="service-title" style="margin-bottom:12px;">Same-Day Service Available</div>
+        <p class="service-desc">Need it gone today? We offer same-day and next-day scheduling based on availability across Connecticut.</p>
+      </div>
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">🛡️</div>
+        <div class="service-title" style="margin-bottom:12px;">Licensed & Insured</div>
+        <p class="service-desc">We carry proper licensing and insurance so you're fully protected on every job — no exceptions.</p>
+      </div>
+      <div class="review-card fade-in">
+        <div style="font-size:36px; margin-bottom:20px;">♻️</div>
+        <div class="service-title" style="margin-bottom:12px;">Responsible Disposal</div>
+        <p class="service-desc">We recycle and donate usable items whenever possible, keeping as much as we can out of the landfill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote" class="section-full" style="padding: 120px 48px;">
+  <div class="quote-inner">
+    <div class="quote-left">
+      <div class="section-label">Free Estimate</div>
+      <h2>Get Your <em>Quote</em></h2>
+      <p class="section-intro">Fill out the form and we'll get back to you within a few hours with a fair, upfront price. No obligation, no hassle.</p>
+      <div class="quote-contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-info">
+            <div class="contact-label">Phone / Text</div>
+            <a href="tel:8605563012" class="contact-value">860-556-3012</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-info">
+            <div class="contact-label">Hours</div>
+            <span class="contact-value">Mon – Sat, 7:00 AM – 7:00 PM</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-info">
+            <div class="contact-label">Service Area</div>
+            <span class="contact-value">Milford, Stratford, Bridgeport, New Haven, Hartford & More</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-info">
+            <div class="contact-label">Email</div>
+            <a href="mailto:Darkclouds116@gmail.com" class="contact-value">Darkclouds116@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-form" id="quoteFormWrap">
+      <div id="formBody">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="first_name" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last_name" placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(860) 000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service…</option>
+            <option>Furniture Removal</option>
+            <option>Appliance Hauling</option>
+            <option>Estate Cleanout</option>
+            <option>Construction Debris</option>
+            <option>Yard Waste Removal</option>
+            <option>Garage / Basement Cleanout</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="details">Job Details</label>
+          <textarea id="details" name="details" placeholder="Tell us what you need hauled away, your location, and any details that might help us give you an accurate estimate…"></textarea>
+        </div>
+        <button type="button" class="btn-primary form-submit" id="submitBtn" onclick="submitQuoteForm()">
+          <span id="submitLabel">Send My Quote Request →</span>
+          <span id="submitSpinner" style="display:none;">Sending…</span>
+        </button>
+        <p class="form-note">We typically respond within 2 hours during business hours.</p>
+        <p id="formError" style="display:none; color:#e06060; font-size:13px; margin-top:12px; text-align:center;"></p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">Request Received!</div>
+        <p class="form-success-text">Thanks! We'll be in touch shortly — usually within 2 hours during business hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section-full" style="padding: 120px 48px; background: var(--coal);">
+  <div style="max-width:1400px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:100px; align-items:start;">
+      <div>
+        <div class="section-label">Direct Message</div>
+        <h2>Contact <em>Us</em></h2>
+        <p class="section-intro">Have a quick question? Send us a message and we'll get back to you fast.</p>
+        <div style="margin-top:40px; padding:32px 36px; background:var(--charcoal); border:1px solid var(--border); border-left: 3px solid var(--gold);">
+          <p style="font-family:'DM Serif Display',serif; font-size:18px; font-style:italic; color:var(--white-dim); line-height:1.6;">
+            "No job too big or too small. Reach out — we're ready to help."
+          </p>
+        </div>
+      </div>
+      <div class="quote-form" id="contactFormWrap" style="position:relative;">
+        <div id="contactFormBody">
+          <div class="form-group">
+            <label for="c_name">Your Name *</label>
+            <input type="text" id="c_name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c_phone">Phone</label>
+              <input type="tel" id="c_phone" name="phone" placeholder="(860) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="c_email">Email *</label>
+              <input type="email" id="c_email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c_message">Message *</label>
+            <textarea id="c_message" name="message" placeholder="How can we help you?" style="min-height:120px;" required></textarea>
+          </div>
+          <button type="button" class="btn-primary form-submit" id="contactBtn" onclick="submitContactForm()">
+            <span id="contactLabel">Send Message →</span>
+            <span id="contactSpinner" style="display:none;">Sending…</span>
+          </button>
+          <p class="form-note">We reply within a few hours during business hours.</p>
+          <p id="contactError" style="display:none; color:#e06060; font-size:13px; margin-top:12px; text-align:center;"></p>
+        </div>
+        <div id="contactSuccess" style="display:none; text-align:center; padding:40px;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <div class="form-success-title">Message Sent!</div>
+          <p class="form-success-text">Thanks for reaching out — we'll be in touch soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA STRIP -->
+<div class="area-strip">
+  Proudly serving <strong>Milford · Stratford · Bridgeport · New Haven · West Haven · Orange · Hartford</strong> and all surrounding Connecticut communities.
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">TEC<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#quote">Quote</a></li>
+      <li><a href="tel:8605563012">860-556-3012</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 TEC Junk Removal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Sticky nav shadow
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 8px 40px rgba(0,0,0,0.5)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // ── Formspree endpoint (replace YOUR_FORM_ID after you sign up at formspree.io) ──
+  // Steps:
+  //   1. Go to https://formspree.io/register (free)
+  //   2. Create a new form → set email to Darkclouds116@gmail.com
+  //   3. Copy your form ID (looks like: xabcdefg)
+  //   4. Replace YOUR_FORM_ID below with it (e.g. "xabcdefg")
+  const FORMSPREE_QUOTE_ID   = 'xbderooa';
+  const FORMSPREE_CONTACT_ID = 'xbderooa';
+
+  async function postToFormspree(formId, data) {
+    const res = await fetch(`https://formspree.io/f/${formId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    return res.ok;
+  }
+
+  async function submitQuoteForm() {
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+    const details = document.getElementById('details').value.trim();
+    const errEl   = document.getElementById('formError');
+
+    if (!fname || !phone) {
+      errEl.textContent = 'Please fill in your name and phone number.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    errEl.style.display = 'none';
+    const btn = document.getElementById('submitBtn');
+    document.getElementById('submitLabel').style.display = 'none';
+    document.getElementById('submitSpinner').style.display = 'inline';
+    btn.disabled = true;
+
+    const ok = await postToFormspree(FORMSPREE_QUOTE_ID, {
+      _subject: `TEC Quote Request — ${fname} ${lname}`,
+      name: `${fname} ${lname}`,
+      phone, email, service, details
+    });
+
+    if (ok) {
+      document.getElementById('formBody').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      errEl.textContent = 'Something went wrong. Please call us at 860-556-3012.';
+      errEl.style.display = 'block';
+      document.getElementById('submitLabel').style.display = 'inline';
+      document.getElementById('submitSpinner').style.display = 'none';
+      btn.disabled = false;
+    }
+  }
+
+  async function submitContactForm() {
+    const name    = document.getElementById('c_name').value.trim();
+    const phone   = document.getElementById('c_phone').value.trim();
+    const email   = document.getElementById('c_email').value.trim();
+    const message = document.getElementById('c_message').value.trim();
+    const errEl   = document.getElementById('contactError');
+
+    if (!name || !email || !message) {
+      errEl.textContent = 'Please fill in your name, email, and message.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    errEl.style.display = 'none';
+    const btn = document.getElementById('contactBtn');
+    document.getElementById('contactLabel').style.display = 'none';
+    document.getElementById('contactSpinner').style.display = 'inline';
+    btn.disabled = true;
+
+    const ok = await postToFormspree(FORMSPREE_CONTACT_ID, {
+      _subject: `TEC Contact Message — ${name}`,
+      name, phone, email, message
+    });
+
+    if (ok) {
+      document.getElementById('contactFormBody').style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    } else {
+      errEl.textContent = 'Something went wrong. Please call us at 860-556-3012.';
+      errEl.style.display = 'block';
+      document.getElementById('contactLabel').style.display = 'inline';
+      document.getElementById('contactSpinner').style.display = 'none';
+      btn.disabled = false;
+    }
+  }
+</script>
+<a href="tel:8605563012" class="floating-call">
+  📞 Call Now
+</a>
+
+</body>
+</html>
